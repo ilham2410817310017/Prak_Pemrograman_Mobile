@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#FBFCFE">
+
+    <TextView
+        android:id="@+id/calculate_tip_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="180dp"
+        android:text="@string/calculate_tip"
+        android:textColor="#43474E"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bill_amount_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:startIconDrawable="@drawable/ic_baseline_100"
+        app:startIconTint="#49454F"
+        app:hintTextColor="#49454F"
+        app:boxBackgroundColor="#F3F3F3"
+        app:layout_constraintTop_toBottomOf="@id/calculate_tip_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cost_of_service_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/bill_amount"
+            android:inputType="numberDecimal"
+            android:textColor="#1C1B1F"
+            android:textColorHint="#49454F"
+            android:paddingStart="52dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tip_options_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:startIconDrawable="@drawable/ic_baseline_percent"
+        app:startIconTint="#49454F"
+        app:boxBackgroundColor="#F3F3F3"
+        app:layout_constraintTop_toBottomOf="@id/bill_amount_layout">
+
+        <AutoCompleteTextView
+            android:id="@+id/tip_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tip_percentage"
+            android:inputType="none"
+            android:text="15%"
+            android:textColor="#1C1B1F"
+            android:paddingStart="52dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/round_up_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/round_up_tip"
+        android:textSize="16sp"
+        android:textColor="#1C1B1F"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tip_options_layout" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/round_up_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/round_up_label"
+        app:layout_constraintBottom_toBottomOf="@id/round_up_label" />
+
+    <TextView
+        android:id="@+id/tip_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="Tip Amount: $0.00"
+        android:textColor="#001D35"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:lineSpacingExtra="8dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/round_up_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
