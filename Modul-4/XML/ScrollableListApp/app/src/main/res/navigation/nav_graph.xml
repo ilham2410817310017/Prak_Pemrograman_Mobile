@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/xmlListFragment">
+
+    <fragment
+        android:id="@+id/xmlListFragment"
+        android:name="com.ilham.scrollablelistapp.XmlListFragment"
+        android:label="Movie List (XML)"
+        tools:layout="@layout/fragment_xml_list">
+        <action
+            android:id="@+id/action_xmlListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.ilham.scrollablelistapp.DetailFragment"
+        android:label="Movie Detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="movie"
+            app:argType="com.ilham.scrollablelistapp.model.Movie" />
+    </fragment>
+</navigation>
